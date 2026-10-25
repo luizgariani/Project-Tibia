@@ -2,7 +2,7 @@ import requests
 import MySQLdb  # mysqlclient library to connect to MySQL
 
 # Step 1: Extracting data from the API
-url = "https://api.tibiadata.com/v4/creatures"
+url = "https://api.tibiadata.com/v5/creatures"
 response = requests.get(url)
 
 if response.status_code == 200:

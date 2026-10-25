@@ -24,7 +24,8 @@ This project is focused on building a Tibia-themed chatbot that integrates Pytho
 
 1. **Data Extraction**:
    - Extract data from the Tibia API, including creatures, characters, guilds, highscores, houses, kill statistics, and worlds.
-   - Use the endpoint `https://api.tibiadata.com/v4/creatures` as the starting point for data ingestion.
+   - Use the endpoint `https://api.tibiadata.com/v5/creatures` as the starting point for data ingestion.
+   - TibiaData API v5 keeps the v4 endpoint set and JSON structure, so the creature ingestion fields remain unchanged. Missing resources now return `404 Not Found`; upstream failures return `502 Bad Gateway`.
 
 2. **Database Management**:
    - Store the extracted data in a PostgreSQL database running in a Docker container.
@@ -112,4 +113,3 @@ So far, we have successfully:
 - Set up Git and SSH for secure code management.
 - Configured the PostgreSQL 16 database with the pgvector extension inside a Docker container running on WSL.
 - Established the initial project structure and repository on GitHub.
-
